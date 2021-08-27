@@ -91,3 +91,5 @@ SetAzurePermissions -tenantId $jsonObject['AdTenantId']`
                     -clientIdentity $jsonObject['ClientIdentity']`
                     -serviceIdentity $jsonObject['ServiceIdentity']`
                     -roles $jsonObject['Roles']
+
+Disconnect-AzureAd
