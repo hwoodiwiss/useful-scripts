@@ -1,3 +1,9 @@
+param (
+	[Parameter()]
+	[string]
+	$SdkVersion = "latest"
+)
+
 function GetEmsdkPath {
 	$emsdkPathFile = "~\.emsdkpath";
 	if (Test-Path -Path $emsdkPathFile) {
@@ -16,4 +22,4 @@ function GetEmsdkPath {
 }
 
 $emsdkPath = GetEmsdkPath
-Invoke-Expression ". $emsdkPath\emsdk.ps1 activate latest"
+& $emsdkPath\emsdk.ps1 activate $SdkVersion
