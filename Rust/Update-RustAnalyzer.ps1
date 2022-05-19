@@ -11,7 +11,7 @@ function ClearExisting {
 }
 
 function GetLatestWindowsUri {
-	$latestData = (Invoke-WebRequest "https://api.github.com/repos/rust-analyzer/rust-analyzer/releases/latest" | ConvertFrom-Json)
+	$latestData = (Invoke-WebRequest "https://api.github.com/repos/rust-lang/rust-analyzer/releases/latest" | ConvertFrom-Json)
 	$windowsAsset = $latestData.assets.Where( { $_.name -like "*x86_64-pc-windows*" })[0]
 	return $windowsAsset.browser_download_url
 }
